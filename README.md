@@ -79,3 +79,5 @@ Then the user will be able to open the app.
 When the user is in the main screen of the app;
 Then user will see a pie chart that shows the number of events on each city.
  
+## Usage of Serverless functions
+For my Meet App, I will use serverless functions to handle access token retrieval from the authorization server. These functions will initiate the OAuth process, obtain access tokens, and manage user authentication. AWS Lambda will be my choice for hosting these serverless functions.

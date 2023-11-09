@@ -8,29 +8,7 @@ The Meet app is a progressive web application that offers offline functionality 
 
 You can also access the live app hosted on Github pages: https://christheoguipo.github.io/meet/
 
-## Project dependencies 
-### Dependencies:
-- "@testing-library/jest-dom": "^5.17.0",
-- "@testing-library/react": "^13.4.0",
-- "@testing-library/user-event": "^13.5.0",
-- "react": "^18.2.0",
-- "react-dom": "^18.2.0",
-- "react-scripts": "5.0.1",
-- "web-vitals": "^2.1.4",
-- "workbox-background-sync": "^6.6.0",
-- "workbox-broadcast-update": "^6.6.0",
-- "workbox-cacheable-response": "^6.6.0",
-- "workbox-core": "^6.6.0",
-- "workbox-expiration": "^6.6.0",
-- "workbox-google-analytics": "^6.6.0",
-- "workbox-navigation-preload": "^6.6.0",
-- "workbox-precaching": "^6.6.0",
-- "workbox-range-requests": "^6.6.0",
-- "workbox-routing": "^6.6.0",
-- "workbox-strategies": "^6.6.0",
-- "workbox-streams": "^6.6.0"
-
-## User Stories:
+## User Stories
 1. As a user, I should be able to filter events by city
 so that I can see a list of events taking place in that city.
 
@@ -49,7 +27,7 @@ so that I could easily open it from my home screen
 6. As a user, I should be able to display the charts visualizing the event details
 so that I could have an overview about the events for every city.
 
-## Scenarios: 
+## Scenarios
 1. Given user hasn’t searched for any city;
 When the user opens the app;
 Then the user should see a list of upcoming events.
@@ -80,4 +58,4 @@ When the user is in the main screen of the app;
 Then user will see a pie chart that shows the number of events on each city.
  
 ## Usage of Serverless functions
-For my Meet App, I will use serverless functions to handle access token retrieval from the authorization server. These functions will initiate the OAuth process, obtain access tokens, and manage user authentication. AWS Lambda will be my choice for hosting these serverless functions.
+For my Meet App, I used serverless functions to handle access token retrieval from the authorization server. These functions will initiate the OAuth process, obtain access tokens, and manage user authentication. AWS Lambda was chosen to host these serverless functions.

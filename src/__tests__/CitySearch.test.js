@@ -89,4 +89,4 @@ describe('<CitySearch /> integration', () => {
     const suggestionListItems = within(CitySearchDOM).queryAllByRole('listitem');
     expect(suggestionListItems.length).toBe(allLocations.length + 1);
   });
-});
+}); 

@@ -9,11 +9,11 @@ const Event = ({ event }) => {
   };
 
   return (
-    <li>
+    <li className="event">
       <div>{event.summary}</div>
       <div>{event.created}</div>
       <div>{event.location}</div>
-      <button onClick={handleItemClicked}>{showDetails ? 'hide details' : 'show details'}</button>
+      <button className="details-btn" onClick={handleItemClicked}>{showDetails ? 'hide details' : 'show details'}</button>
     </li>
   );
 };

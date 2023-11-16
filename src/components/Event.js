@@ -13,6 +13,7 @@ const Event = ({ event }) => {
       <div>{event.summary}</div>
       <div>{event.created}</div>
       <div>{event.location}</div>
+      <div className={showDetails ? "details" : "hide-details"}>{event.description}</div>
       <button className="details-btn" onClick={handleItemClicked}>{showDetails ? 'hide details' : 'show details'}</button>
     </li>
   );

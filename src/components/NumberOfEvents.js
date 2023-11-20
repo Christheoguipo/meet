@@ -7,7 +7,6 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
     const value = event.target.value;
     setNumberOfEvents(value);
 
-    console.log(value);
     let errorText;
     if (value <= 0 || isNaN(value)) {
       errorText = "Invalid number of events.";

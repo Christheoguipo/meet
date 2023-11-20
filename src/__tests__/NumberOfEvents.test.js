@@ -11,7 +11,7 @@ describe('<NumberOfEvents /> component', () => {
   let numberOfEventsTextbox;
 
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => { }} />);
+    NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => { }} setErrorAlert={() => { }} />);
     numberOfEventsTextbox = NumberOfEventsComponent.queryByRole('spinbutton');
   });
 

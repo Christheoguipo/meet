@@ -37,28 +37,32 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
 
   return (
     <div id="city-search">
+      <h4>Choose your nearest city</h4>
       <input
+        id="city-search-textbox"
         type="text"
         className="city"
         placeholder="Search for a city"
         value={query}
         onFocus={() => setShowSuggestions(true)}
+        onBlur={() => setShowSuggestions(false)}
         onChange={handleInputChanged}
       />
 
-      {showSuggestions ?
-        <ul className="suggestions">
-          {suggestions.map((suggestion) => {
-            return <li key={suggestion} onClick={handleItemClicked}>{suggestion}</li>
-          })}
-          <li key='See all cities' onClick={handleItemClicked}>
-            <b>See all cities</b>
-          </li>
-        </ul>
-        : null
+      {
+        showSuggestions ?
+          <ul className="suggestions">
+            {suggestions.map((suggestion) => {
+              return <li key={suggestion} onMouseDown={handleItemClicked}>{suggestion}</li>
+            })}
+            <li key='See all cities' onMouseDown={handleItemClicked}>
+              <b>See all cities</b>
+            </li>
+          </ul>
+          : null
       }
 
-    </div>
+    </div >
   )
 }
 

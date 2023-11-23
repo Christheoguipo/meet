@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from 'react-bootstrap/Button';
 
 const Event = ({ event }) => {
 
@@ -14,7 +15,7 @@ const Event = ({ event }) => {
       <div>{event.created}</div>
       <div>{event.location}</div>
       <div className={showDetails ? "details" : "hide-details"}>{event.description}</div>
-      <button className="details-btn" onClick={handleItemClicked}>{showDetails ? 'hide details' : 'show details'}</button>
+      <Button variant="outline-primary" className="details-btn" onClick={handleItemClicked}>{showDetails ? 'hide details' : 'show details'}</Button>
     </li>
   );
 };

@@ -35,6 +35,17 @@ input[type="number"] {
   width: 250px;
 }
 
+#NOEtextbox {
+  width: 250px;
+}
+
+#number-of-events {
+  display: flex;
+  flex-direction: column;
+  /* margin: auto; */
+  position: relative;
+}
+
 #city-search {
   display: flex;
   flex-direction: column;
@@ -70,12 +81,12 @@ input[type="number"] {
 }
 
 .event {
-  padding: 10px 10px 35px;
+  /* padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
   border: 1px solid #ccc;
   border-radius: 4px;
-  position: relative;
+  position: relative; */
 }
 
 .details-btn {
@@ -92,32 +103,105 @@ input[type="number"] {
   display: none;
 }
 
+
+ 
+
+.accordion-body {
+  border: 2px solid #80B192;
+  /* border: 1px solid rgba(67, 145, 255, 0.75); */
+  background-color: #80B192;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: #80B192;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #80B192;
+  border-color: #80B192;
+  box-shadow: none;
+  color: black;
+}
+
+
+.accordion-button {
+  border:2px solid #80B192;
+  /* border:1px solid rgba(67, 145, 255, 0.75); */
+  background-color: #afceb8;
+
+}
+
+/* .accordion-button:not(.collapsed) .event-summary  {
+    transition: margin-left 2s;
+  margin-left: 50px;
+
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}  */
+ 
+.event-summary {
+  font-weight: bold;
+}
+
+.event-meta {
+  color: #555;
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+ 
+
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;  
+  margin-bottom: 10px;
+}
+
 .alerts-container {
   position: fixed;
   top: 0px;
   left: 20px;
-  width: 250px;
+  width: fit-content;
+  max-width: 250px;
   z-index: 1000;
+  text-align: start;
 }
+
+/* .alerts-container {
+  position: fixed;
+  width: fit-content;
+  top: 0px;
+  left: 0;
+  text-align: start;
+  z-index: 1000;
+} */
 
 .charts-container {
   display: grid;
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 1fr 1fr;
+  background-color: whitesmoke;
+  border: 1px solid #ddd; 
+  border-radius: 8px;
+  gap: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .charts-container {
     display: grid;
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .alerts-container {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    z-index: 0;
     left: 0;
-    /* top: 0px;
-    
-    z-index: 1000; */
+    text-align: start;
   }
   
 }

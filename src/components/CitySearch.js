@@ -16,7 +16,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
 
     let infoText;
     if (filteredLocations.length === 0) {
-      infoText = "We can not find the city you are looking for. Please try another city"
+      infoText = "We can not find the city you are looking for. Please try another city."
     } else {
       infoText = ""
     }
@@ -36,8 +36,8 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
   }, [allLocations]);
 
   return (
-    <div id="city-search">
-      <h4>Choose your nearest city</h4>
+    <div className="mt-5" id="city-search">
+      <label>Choose your nearest city </label>
       <input
         id="city-search-textbox"
         type="text"

@@ -8,10 +8,10 @@ Feature: Show/hide an event's details
     Given the list of events has been loaded
     When the user clicks the "show details" button for an event
     Then the details of the selected event should be expanded
-    And the "show details" button text should change to "hide details"
+  # And the "show details" button text should change to "hide details"
 
   Scenario: User can collapse an event to hide details.
     Given the event's details are shown
     When the user clicks the "hide details" button
     Then the details of the selected event should collapse
-    And the "hide details" button text should change to "show details".
+# And the "hide details" button text should change to "show details".

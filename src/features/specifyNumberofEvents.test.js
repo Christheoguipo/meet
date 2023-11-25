@@ -24,6 +24,7 @@ defineFeature(feature, test => {
     then(/^the user should see (\d+) events by default.$/, async (arg0) => {
       await waitFor(() => {
         const eventListItems = within(EventListDOM).queryAllByRole('listitem');
+        // const eventListItems = within(EventListDOM).querySelector('.accordion-item');
         expect(eventListItems.length).toBe(32);
       });
     });
@@ -45,6 +46,7 @@ defineFeature(feature, test => {
 
       await waitFor(() => {
         eventListItems = within(EventListDOM).queryAllByRole('listitem');
+        // eventListItems = within(EventListDOM).querySelector('.accordion-item');
       });
     });
 
@@ -60,6 +62,7 @@ defineFeature(feature, test => {
     then('the number of events displayed be filtered equal to the entered number.', async () => {
       await waitFor(() => {
         eventListItems = within(EventListDOM).queryAllByRole('listitem');
+        // eventListItems = within(EventListDOM).querySelector('.accordion-item');
         expect(eventListItems.length).toBe(numberOfEventsEntered);
       });
     });

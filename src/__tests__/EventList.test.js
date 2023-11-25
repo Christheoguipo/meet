@@ -10,13 +10,16 @@ describe('<EventList /> component', () => {
   });
 
   test('has an element with "list" role', () => {
+    // test('has an accordion element', () => {
     expect(EventListComponent.queryByRole("list")).toBeInTheDocument();
+    // expect(EventListComponent.querySelector("#event-list")).toBeInTheDocument();
   });
 
   test('renders correct number of events', async () => {
     const allEvents = await getEvents();
     EventListComponent.rerender(<EventList events={allEvents} />);
     expect(EventListComponent.getAllByRole("listitem")).toHaveLength(allEvents.length);
+    // expect(EventListComponent.querySelector(".accordion-item")).toHaveLength(allEvents.length);
   });
 
 });
@@ -28,6 +31,7 @@ describe('<EventList /> integration', () => {
     const EventListDOM = AppDOM.querySelector('#event-list');
     await waitFor(() => {
       const EventListItems = within(EventListDOM).queryAllByRole('listitem');
+      // const EventListItems = within(EventListDOM).querySelector('.accordion-item');
       expect(EventListItems.length).toBe(32);
     });
   });

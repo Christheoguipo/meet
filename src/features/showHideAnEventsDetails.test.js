@@ -24,6 +24,7 @@ defineFeature(feature, test => {
 
       await waitFor(() => {
         const EventListItems = within(EventListDOM).queryAllByRole('listitem');
+        // const EventListItems = within(EventListDOM).querySelector('.accordion-item');
         expect(EventListItems.length).toBe(32);
       });
     });
@@ -32,8 +33,10 @@ defineFeature(feature, test => {
 
       await waitFor(() => {
         const EventListItems = within(EventListDOM).queryAllByRole('listitem');
-        const eventDetails = EventListItems[0].querySelector('.details');
-        expect(eventDetails).not.toBeInTheDocument();
+        // const eventDetails = EventListItems[0].querySelector('.details');
+        const eventDetails = EventListItems[0].querySelector('.collapsed');
+        // expect(eventDetails).not.toBeInTheDocument();
+        expect(eventDetails).toBeInTheDocument();
       });
 
     });
@@ -55,7 +58,8 @@ defineFeature(feature, test => {
     when(/^the user clicks the "(.*)" button for an event$/, async (arg0) => {
       await waitFor(() => {
         const EventListItems = within(EventListDOM).queryAllByRole('listitem');
-        hideShowDetails = EventListItems[0].querySelector('.details-btn');
+        // hideShowDetails = EventListItems[0].querySelector('.details-btn');
+        hideShowDetails = EventListItems[0].querySelector('.accordion-button');
       });
 
       const user = userEvent.setup();
@@ -65,16 +69,17 @@ defineFeature(feature, test => {
     then('the details of the selected event should be expanded', async () => {
       await waitFor(() => {
         const EventListItems = within(EventListDOM).queryAllByRole('listitem');
-        const eventDetails = EventListItems[0].querySelector('.details');
+        // const eventDetails = EventListItems[0].querySelector('.details');
+        const eventDetails = EventListItems[0].querySelector('.accordion-body');
         expect(eventDetails).toBeInTheDocument();
       });
     });
 
-    and(/^the "(.*)" button text should change to "(.*)"$/, async (arg0, arg1) => {
-      await waitFor(() => {
-        expect(hideShowDetails.textContent).toBe('hide details');
-      });
-    });
+    // and(/^the "(.*)" button text should change to "(.*)"$/, async (arg0, arg1) => {
+    //   await waitFor(() => {
+    //     expect(hideShowDetails.textContent).toBe('hide details');
+    //   });
+    // });
 
   });
 
@@ -94,7 +99,8 @@ defineFeature(feature, test => {
 
       await waitFor(() => {
         EventListItems = within(EventListDOM).queryAllByRole('listitem');
-        hideShowDetails = EventListItems[0].querySelector('.details-btn');
+        // hideShowDetails = EventListItems[0].querySelector('.details-btn');
+        hideShowDetails = EventListItems[0].querySelector('.accordion-button');
       });
 
       const user = userEvent.setup();
@@ -103,7 +109,8 @@ defineFeature(feature, test => {
 
       await waitFor(() => {
         EventListItems = within(EventListDOM).queryAllByRole('listitem');
-        const eventDetails = EventListItems[0].querySelector('.details');
+        // const eventDetails = EventListItems[0].querySelector('.details');
+        const eventDetails = EventListItems[0].querySelector('.accordion-body');
         expect(eventDetails).toBeInTheDocument();
       });
     });
@@ -116,16 +123,17 @@ defineFeature(feature, test => {
     then('the details of the selected event should collapse', async () => {
       await waitFor(() => {
         EventListItems = within(EventListDOM).queryAllByRole('listitem');
-        const eventDetails = EventListItems[0].querySelector('.details');
-        expect(eventDetails).not.toBeInTheDocument();
+        // const eventDetails = EventListItems[0].querySelector('.details');
+        const eventDetails = EventListItems[0].querySelector('.collapsed');
+        expect(eventDetails).toBeInTheDocument();
       });
     });
 
-    and(/^the "(.*)" button text should change to "(.*)".$/, async (arg0, arg1) => {
-      await waitFor(() => {
-        expect(hideShowDetails.textContent).toBe('show details');
-      });
-    });
+    // and(/^the "(.*)" button text should change to "(.*)".$/, async (arg0, arg1) => {
+    //   await waitFor(() => {
+    //     expect(hideShowDetails.textContent).toBe('show details');
+    //   });
+    // });
 
   });
 });

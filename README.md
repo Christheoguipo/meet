@@ -1,10 +1,40 @@
+# Meet App
 
 ## Project description
 The Meet app is a progressive web application that offers offline functionality and utilizes serverless architecture developed through test-driven development (TDD). Users can access upcoming events for specific cities at any time. The app and its serverless backend are hosted online and can be installed and used across devices, even offline. This project showcases next-generation serverless infrastructure, offers a seamless user experience through PWA, and emphasizes quality code with TDD.
 
-## How to run the app?
-- On your terminal, type in `npm start`.
-- The app opens automatically on your default browser or manually via http://localhost:3000.
+## Usage of Serverless functions
+Meet App uses serverless functions to handle access token retrieval from the authorization server. These functions will initiate the OAuth process, obtain access tokens, and manage user authentication. AWS Lambda was chosen to host these serverless functions.
+
+## Getting Started
+
+Follow these steps to get started with the Meet App:
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/Christheoguipo/meet.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd meet
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Start the development server:
+
+    ```bash
+    npm start
+    ```
+
+5. The Meet App opens automatically on your default browser or manually via [http://localhost:3000](http://localhost:3000).
 
 You can also access the live app hosted on Github pages: https://christheoguipo.github.io/meet/
 
@@ -57,5 +87,3 @@ Then the user will be able to open the app.
 When the user is in the main screen of the app;
 Then user will see a pie chart that shows the number of events on each city.
  
-## Usage of Serverless functions
-For my Meet App, I used serverless functions to handle access token retrieval from the authorization server. These functions will initiate the OAuth process, obtain access tokens, and manage user authentication. AWS Lambda was chosen to host these serverless functions.

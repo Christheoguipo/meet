@@ -1,10 +1,24 @@
 # Meet App
 
-## Project description
+## Project Description
 The Meet app is a progressive web application that offers offline functionality and utilizes serverless architecture developed through test-driven development (TDD). Users can access upcoming events for specific cities at any time. The app and its serverless backend are hosted online and can be installed and used across devices, even offline. This project showcases next-generation serverless infrastructure, offers a seamless user experience through PWA, and emphasizes quality code with TDD.
 
-## Usage of Serverless functions
+
+## Usage of Serverless Functions
 Meet App uses serverless functions to handle access token retrieval from the authorization server. These functions will initiate the OAuth process, obtain access tokens, and manage user authentication. AWS Lambda was chosen to host these serverless functions.
+
+
+## Technologies Used
+
+- React
+- React Bootstrap
+- Recharts
+- Testing Libraries:
+  - Jest-Cucumber
+  - Puppeteer
+  - React Testing Library
+- AWS
+- Google API
 
 ## Getting Started
 
